@@ -1,4 +1,4 @@
-# spicetify-kde-material-you
+# spicetify-kde-material-you-colors
 
 Fork of https://github.com/luisbocanegra/kde-material-you-colors
 
