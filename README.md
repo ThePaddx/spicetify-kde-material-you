@@ -31,7 +31,7 @@ extensions            = scrollArtistImg.js
 ```
 
 
-## material you config
+## kde-material-you-colors config
 
 If you want to automaticly change colors of spotify edit 
 the **on_change_hook** variable in your config.conf under **$HOME/.config/kde-material-you-colors/** file to:
