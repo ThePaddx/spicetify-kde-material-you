@@ -1,6 +1,6 @@
 # spicetify-kde-material-you
 
-Quick dirty spicetify theme for [kde-material-you-colors](https://github.com/luisbocanegra/kde-material-you-colors)
+Fork of https://github.com/luisbocanegra/kde-material-you-colors
 
 ## config-xpui.ini
 
@@ -26,5 +26,12 @@ extensions            = scrollArtistImg.js
 ```sh
 #!/bin/bash
 
-python /path/to/material-you-spicetify.py
+python $HOME/.config/spicetify/Themes/material-you-spicetify.py
+```
+## material you config
+
+If you want to automaticly change colors of spotify edit 
+the on_change_hook variable in your material-you config file to:
+```
+on_change_hook=$HOME/.config/spicetify/Themes/material-you-colors-spicetify-hook.sh
 ```
