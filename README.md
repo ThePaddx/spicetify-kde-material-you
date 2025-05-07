@@ -11,6 +11,8 @@ Technically the same with some additions and fixex:
 
 ## config-xpui.ini
 
+Edit the config-xpui in your **$HOME/.config/spicetify/** to match these settings:
+
 ```ini
 [Setting]
 current_theme           = MaterialYou
@@ -21,24 +23,19 @@ overwrite_assets        = 1
 inject_theme_js         = 1
 ```
 
-optional tinted scrollable artist page img
+**[optional]** tinted scrollable artist page img
 
 ```ini
 [AdditionalOptions]
 extensions            = scrollArtistImg.js
 ```
 
-## hook (on_change_hook=/path/to/kde-material-you-hooks.sh)
 
-```sh
-#!/bin/bash
-
-python $HOME/.config/spicetify/Themes/material-you-spicetify.py
-```
 ## material you config
 
 If you want to automaticly change colors of spotify edit 
-the on_change_hook variable in your material-you config file to:
-```
+the **on_change_hook** variable in your config.conf under **$HOME/.config/kde-material-you-colors/** file to:
+```ini
 on_change_hook=$HOME/.config/spicetify/Themes/material-you-colors-spicetify-hook.sh
 ```
+
