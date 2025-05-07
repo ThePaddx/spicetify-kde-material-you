@@ -1,6 +1,12 @@
 # spicetify-kde-material-you
 
 Fork of https://github.com/luisbocanegra/kde-material-you-colors
+Technically the same with some additions and fixex:
+
+- Fixed issues python script not working
+- Corrected python script color behaviour to get the correct colors 
+- User folder detection
+- Added a script to automatically update the colors on each change (useful for wallpaper Slideshows)
 
 ## config-xpui.ini
 
