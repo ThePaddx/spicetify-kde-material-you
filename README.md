@@ -1,6 +1,7 @@
 # spicetify-kde-material-you
 
 Fork of https://github.com/luisbocanegra/kde-material-you-colors
+
 Technically the same with some additions and fixex:
 
 - Fixed issues python script not working
