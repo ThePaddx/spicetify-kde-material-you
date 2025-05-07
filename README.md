@@ -9,6 +9,15 @@ Technically the same with some additions and fixex:
 - User folder detection
 - Added a script to automatically update the colors on each change (useful for wallpaper Slideshows)
 
+
+# Prequisites
+- kde-material-you-colors https://github.com/luisbocanegra/kde-material-you-colors
+- Spicetify https://github.com/spicetify
+- Spotify
+- 
+  
+
+
 ## config-xpui.ini
 
 Edit the config-xpui in your **$HOME/.config/spicetify/** to match these settings:
