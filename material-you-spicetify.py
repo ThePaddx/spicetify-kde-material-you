@@ -5,9 +5,11 @@ import configparser
 import os
 import time
 from pathlib import Path
+import getpass
+USR = getpass.getuser()
 
 HOME = str(Path.home())
-MATERIAL_YOU_JSON_FILE = "/tmp/kde-material-you-colors.json"
+MATERIAL_YOU_JSON_FILE = "/tmp/kde-material-you-colors-"+ USR + ".json"
 SPICETIFY_COLORS_FILE = HOME + "/.config/spicetify/Themes/MaterialYou/color.ini"
 MATERIAL_YOU_CONFIG = HOME + "/.config/kde-material-you-colors/config.conf"
 KDE_GLOBALS = HOME + "/.config/kdeglobals"
@@ -33,7 +35,7 @@ def kde_globals_light():
     else:
         return None
 
-
+# print(MATERIAL_YOU_JSON_FILE)
 # print(kde_globals_light())
 
 
@@ -64,61 +66,47 @@ colors_old = None
 def export_theme(colors_conf, light_mode):
     # print("AAAA")
     if light_mode is True:
-        # print("applying light theme...")
-        colors_conf["materialyou"]["text"] = colors["palettes"]["primary"]["20"]
-        colors_conf["materialyou"]["subtext"] = colors["palettes"]["secondary"]["30"]
+        print("applying light theme...")
+        colors_conf["materialyou"]["text"] = colors["palettes"]["primary"][20]
+        colors_conf["materialyou"]["subtext"] = colors["palettes"]["secondary"][30]
         colors_conf["materialyou"]["scrollbar"] = colors["schemes"]["light"]["outline"]
-        colors_conf["materialyou"]["divider"] = colors["palettes"]["secondary"]["70"]
+        colors_conf["materialyou"]["divider"] = colors["palettes"]["secondary"][70]
         colors_conf["materialyou"]["white"] = colors["schemes"]["light"]["outline"]
-        colors_conf["materialyou"]["main"] = colors["extras"]["light"]["surface"]
-        colors_conf["materialyou"]["sidebar"] = colors["extras"]["light"]["surface"]
-        colors_conf["materialyou"]["player"] = colors["extras"]["light"]["surface3"]
-        colors_conf["materialyou"]["card"] = colors["extras"]["light"]["surface3"]
+        colors_conf["materialyou"]["main"] = colors["schemes"]["light"]["surface"]
+        colors_conf["materialyou"]["sidebar"] = colors["schemes"]["light"]["surface"]
+        colors_conf["materialyou"]["player"] = colors["schemes"]["light"]["surfaceDim"]
+        colors_conf["materialyou"]["card"] = colors["schemes"]["light"]["surfaceDim"]
         colors_conf["materialyou"]["shadow"] = colors["schemes"]["light"]["shadow"]
         colors_conf["materialyou"]["button"] = colors["schemes"]["light"]["primary"]
-        colors_conf["materialyou"]["button-active"] = colors["schemes"]["light"][
-            "outline"
-        ]
-        colors_conf["materialyou"]["button-disabled"] = colors["schemes"]["light"][
-            "outline"
-        ]
+        colors_conf["materialyou"]["button-active"] = colors["schemes"]["light"]["outline"]
+        colors_conf["materialyou"]["button-disabled"] = colors["schemes"]["light"]["outline"]
         colors_conf["materialyou"]["tab-active"] = colors["schemes"]["light"]["outline"]
         colors_conf["materialyou"]["notification"] = "50bf58"
-        colors_conf["materialyou"]["notification-error"] = colors["schemes"]["light"][
-            "outline"
-        ]
+        colors_conf["materialyou"]["notification-error"] = colors["schemes"]["light"]["outline"]
     elif light_mode is False:
-        # print("applying dark theme...")
-        colors_conf["materialyou"]["text"] = colors["palettes"]["primary"]["92"]
-        colors_conf["materialyou"]["subtext"] = colors["palettes"]["secondary"]["80"]
+        print("applying dark theme...")
+        colors_conf["materialyou"]["text"] = colors["palettes"]["primary"][92]
+        colors_conf["materialyou"]["subtext"] = colors["palettes"]["secondary"][80]
         colors_conf["materialyou"]["scrollbar"] = colors["schemes"]["dark"]["outline"]
-        colors_conf["materialyou"]["divider"] = colors["schemes"]["dark"][
-            "inverseOnSurface"
-        ]
+        colors_conf["materialyou"]["divider"] = colors["schemes"]["dark"]["inverseOnSurface"]
         colors_conf["materialyou"]["white"] = colors["schemes"]["dark"]["outline"]
-        colors_conf["materialyou"]["main"] = colors["extras"]["dark"]["surface"]
-        colors_conf["materialyou"]["sidebar"] = colors["extras"]["dark"]["surface"]
-        colors_conf["materialyou"]["player"] = colors["extras"]["dark"]["surface3"]
-        colors_conf["materialyou"]["card"] = colors["extras"]["dark"]["surface3"]
+        colors_conf["materialyou"]["main"] = colors["schemes"]["dark"]["surface"]
+        colors_conf["materialyou"]["sidebar"] = colors["schemes"]["dark"]["surface"]
+        colors_conf["materialyou"]["player"] = colors["schemes"]["dark"]["surfaceDim"]
+        colors_conf["materialyou"]["card"] = colors["schemes"]["dark"]["surfaceDim"]
         colors_conf["materialyou"]["shadow"] = colors["schemes"]["dark"]["surface"]
         colors_conf["materialyou"]["button"] = colors["schemes"]["dark"]["primary"]
-        colors_conf["materialyou"]["button-active"] = colors["schemes"]["dark"][
-            "outline"
-        ]
-        colors_conf["materialyou"]["button-disabled"] = colors["schemes"]["dark"][
-            "outline"
-        ]
+        colors_conf["materialyou"]["button-active"] = colors["schemes"]["dark"]["outline"]
+        colors_conf["materialyou"]["button-disabled"] = colors["schemes"]["dark"]["outline"]
         colors_conf["materialyou"]["tab-active"] = colors["schemes"]["dark"]["outline"]
         colors_conf["materialyou"]["notification"] = "6bff75"
-        colors_conf["materialyou"]["notification-error"] = colors["schemes"]["dark"][
-            "outline"
-        ]
+        colors_conf["materialyou"]["notification-error"] = colors["schemes"]["dark"]["outline"]
 
     # print("AAAA")
     # print(colors_conf['materialyou']['text'])
     with open(SPICETIFY_COLORS_FILE, "w") as configfile:
         colors_conf.write(configfile, space_around_delimiters=True)
-        # print("done...")
+        print("done...")
 
 
 # while True:
@@ -144,7 +132,7 @@ if colors is not None and changed and light_mode is not None:
         colors_conf.optionxform("str")
 
         if os.path.exists(SPICETIFY_COLORS_FILE):
-            # print("colors.ini exists")
+            print("colors.ini exists")
 
             colors_conf.read(SPICETIFY_COLORS_FILE)
             if "materialyou" not in colors_conf:
