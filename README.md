@@ -14,8 +14,6 @@ Technically the same with some additions and fixex:
 - kde-material-you-colors https://github.com/luisbocanegra/kde-material-you-colors
 - Spicetify https://github.com/spicetify
 - Spotify
-- 
-  
 
 
 ## config-xpui.ini
