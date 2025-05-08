@@ -7,7 +7,7 @@ Technically the same with some additions and fixex:
 - Fixed issues python script not working
 - Corrected python script color behaviour to get the correct colors 
 - User folder detection
-- Added a script to automatically update the colors on each change (useful for wallpaper Slideshows)
+- Added a script to automatically update the colors on each change without restarting Spotify (useful for wallpaper Slideshows)
 
 
 # Prequisites
