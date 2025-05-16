@@ -585,7 +585,7 @@
 /* Friends activity bar */
 
 .Root__right-sidebar>* {
-    border: 1px solid red;
+    border: 1px solid;
 }
 
 
