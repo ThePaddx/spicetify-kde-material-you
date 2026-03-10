@@ -43,6 +43,6 @@ extensions            = scrollArtistImg.js
 If you want to automaticly change colors of spotify edit 
 the **on_change_hook** variable in your config.conf under **$HOME/.config/kde-material-you-colors/** file to:
 ```ini
-on_change_hook=$HOME/.config/spicetify/Themes/material-you-colors-spicetify-hook.sh
+on_change_hook=$HOME/.config/spicetify/material-you-colors-spicetify-hook.sh
 ```
 
