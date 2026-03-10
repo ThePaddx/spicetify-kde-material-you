@@ -2,4 +2,9 @@
 
 python ~/.config/spicetify/material-you-spicetify.py
 
-spicetify watch -l -q &
+if pgrep -x spotify > /dev/null
+then
+    pkill -x spicetify
+    spicetify watch -s &
+fi
+
