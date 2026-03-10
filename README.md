@@ -15,6 +15,9 @@ Technically the same with some additions and fixex:
 - Spicetify https://github.com/spicetify
 - Spotify
 
+## 
+
+Move everything to $HOME/.config/spicetify/
 
 ## config-xpui.ini
 
